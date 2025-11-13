@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nerdio | Recast Bundle Package Pricing Calculator</title>
+  <title>Accelerator Package (Nerdio +Recast Bundle)</title>
   <meta name="description" content="Instantly estimate customer and partner pricing with an accessible, brand-aware calculator." />
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="https://cdn.tailwindcss.com" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: dark;
-      --c-bg: #1C289C;
-      --c-surface: #2F39A3;
-      --c-surface-2: #2A35A1;
-      --c-surface-3: #8085C7;
-      --c-text: #FFFFFF;
-      --c-muted: #DFE0F1;
-      --c-primary: #F05928;
-      --c-primary-contrast: #FFFFFF;
+      color-scheme: light;
+      --c-bg: #f9fafb;
+      --c-surface: #ffffff;
+      --c-surface-2: #f8f9fa;
+      --c-surface-3: #e5e7eb;
+      --c-text: #111827;
+      --c-muted: #6b7280;
+      --c-primary: #2563eb;
+      --c-primary-contrast: #ffffff;
       --radius-lg: 1rem;
       --radius-full: 9999px;
-      --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      --shadow-soft: 0 10px 20px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.18);
+      --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
     body:not(.tw-ready) {
       background: var(--c-bg);
@@ -32,7 +33,7 @@
     }
   </style>
 </head>
-<body class="min-h-screen bg-[var(--c-bg)] text-[var(--c-text)]">
+<body class="min-h-screen bg-[var(--c-bg)] text-[var(--c-text)] font-[var(--font-sans)]">
   <div id="cdn-alert" role="alert" aria-live="polite" class="hidden fixed inset-x-0 top-0 z-40 mx-auto max-w-3xl rounded-b-[var(--radius-lg)] bg-[var(--c-surface)]/95 backdrop-blur px-4 py-3 shadow-md">
     <div class="flex items-center gap-3">
       <span class="inline-flex size-5 items-center justify-center rounded-full bg-[var(--c-primary)]/20">
@@ -41,20 +42,20 @@
       <p class="text-sm"><strong>Heads up:</strong> Some styles or icons may look different if CDNs are blocked. The calculator still works.</p>
     </div>
   </div>
-  <header class="max-w-6xl mx-auto px-4 pt-8 pb-4">
+  <header class="max-w-6xl mx-auto px-6 lg:px-12 pt-8 pb-4">
     <div class="flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <img id="brand-logo" alt="Brand logo" src="" class="hidden h-8 w-auto" />
-        <h1 id="brand-title" class="text-2xl sm:text-3xl font-bold tracking-[-0.02em]">Nerdio | Recast Bundle Package Pricing Calculator</h1>
+        <h1 id="brand-title" class="text-3xl font-semibold leading-tight tracking-[-0.02em]">Accelerator Package (Nerdio +Recast Bundle)</h1>
       </div>
-      <button id="copy-email" class="inline-flex items-center gap-2 rounded-[var(--radius-full)] px-4 py-2 bg-[var(--c-primary)] text-[var(--c-primary-contrast)] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--c-primary)] focus:ring-offset-[var(--c-bg)] transition text-sm font-medium">
+      <button id="copy-email" class="inline-flex items-center gap-2 rounded-[var(--radius-full)] px-6 py-2 bg-[var(--c-primary)] text-[var(--c-primary-contrast)] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[var(--c-primary)] focus:ring-offset-2 focus:ring-offset-[var(--c-bg)] transition text-sm font-medium shadow-sm">
         <i data-lucide="mail" aria-hidden="true" class="size-4"></i>
         <span>Copy</span>
       </button>
     </div>
     <p class="mt-2 text-sm text-[var(--c-muted)]">Estimate only. Not a formal quote.</p>
   </header>
-  <nav class="max-w-6xl mx-auto px-4 mt-4" role="tablist" aria-label="Pricing sections">
+  <nav class="max-w-6xl mx-auto px-6 lg:px-12 mt-4" role="tablist" aria-label="Pricing sections">
     <div class="inline-flex rounded-[var(--radius-full)] bg-[var(--c-surface-2)] p-1 shadow-sm ring-1 ring-[color:var(--c-surface-3)]/40">
       <button class="tab-btn inline-flex items-center gap-2 rounded-[var(--radius-full)] px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--c-primary)] focus:ring-offset-2 focus:ring-offset-[var(--c-bg)] data-[active=true]:bg-[var(--c-primary)] data-[active=true]:text-[var(--c-primary-contrast)] text-[var(--c-text)]/95 hover:bg-[color:var(--c-surface-3)]/15 transition"
               role="tab" aria-selected="true" aria-controls="tab-customer" id="tab-customer-btn" data-tab="customer" data-active="true">
@@ -70,14 +71,14 @@
       </button>
     </div>
   </nav>
-  <main id="main" tabindex="-1" class="max-w-6xl mx-auto px-4 py-6">
+  <main id="main" tabindex="-1" class="max-w-6xl mx-auto px-6 lg:px-12 py-6">
     <section id="tab-customer" role="tabpanel" aria-labelledby="tab-customer-btn" class="tab-content">
-      <div class="rounded-2xl bg-[var(--c-surface)] p-6 shadow-[var(--shadow-soft)] ring-1 ring-[color:var(--c-surface-3)]/40">
+      <div class="rounded-2xl bg-[var(--c-surface)] p-6 shadow-[var(--shadow-soft)] ring-1 ring-[color:var(--c-surface-3)]/40 hover:shadow-lg transition-shadow duration-300">
         <form id="customer-form" class="grid md:grid-cols-2 gap-6 mb-4" novalidate>
           <div>
             <div class="flex gap-4">
               <div>
-                <label for="currency" class="font-semibold block mb-2">Currency</label>
+                <label for="currency" class="font-medium block mb-2">Currency</label>
                 <select id="currency" name="currency" class="w-40 rounded-lg px-3 py-2 bg-[var(--c-surface-2)] ring-1 ring-[color:var(--c-surface-3)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--c-primary)]">
                   <option value="USD" selected>USD</option>
                   <option value="GBP">GBP (Pound)</option>
@@ -85,15 +86,15 @@
                 </select>
               </div>
             </div>
-            <label for="users" class="font-semibold block mt-4 mb-2">User count</label>
+            <label for="users" class="font-medium block mt-4 mb-2">User count</label>
             <input id="users" name="users" type="number" inputmode="numeric" min="250" value="500"
               class="w-full rounded-lg px-3 py-2 bg-[var(--c-surface-2)] ring-1 ring-[color:var(--c-surface-3)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--c-primary)]"
               aria-describedby="users-help" />
             <p id="users-help" class="text-xs text-[var(--c-muted)] mt-1">Enter number of licensed users (minimum 250).</p>
-            <p id="users-error" class="hidden mt-1 text-xs text-red-300" role="alert">Please enter a valid user count (minimum 250).</p>
+            <p id="users-error" class="hidden mt-1 text-xs text-red-600" role="alert">Please enter a valid user count (minimum 250).</p>
           </div>
           <div>
-            <label for="term" class="font-semibold block mb-2">Contract Term</label>
+            <label for="term" class="font-medium block mb-2">Contract Term</label>
             <select id="term" name="term"
               class="w-full rounded-lg px-3 py-2 bg-[var(--c-surface-2)] ring-1 ring-[color:var(--c-surface-3)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--c-primary)]">
               <option value="Monthly" selected>Monthly</option>
@@ -102,7 +103,7 @@
             <p id="term-help" class="text-xs text-[var(--c-muted)] mt-1">When Monthly is selected, all MSRP values show monthly (MRR). When Annual is selected, only annual (ARR) values are shown.</p>
           </div>
         </form>
-        <h2 class="text-lg font-semibold mb-4">Customer Quote</h2>
+        <h2 class="text-xl font-medium mb-4">Customer Quote</h2>
         <div class="overflow-x-auto -mx-6 sm:mx-0 mb-6">
           <table class="w-full text-left border-collapse min-w-[640px]">
             <thead class="text-[var(--c-muted)] text-sm">
@@ -116,7 +117,7 @@
             </thead>
             <tbody>
               <tr class="border-t border-[color:var(--c-surface-3)]/50">
-                <td class="py-2 px-6 sm:px-0">Nerdio | Recast Bundle </td>
+                <td class="py-2 px-6 sm:px-0">Accelerator Package (Nerdio +Recast Bundle)</td>
                 <td id="custUsers">0</td>
                 <td id="custPerUser">$0.00</td>
                 <td id="custBase">$0.00</td>
@@ -125,7 +126,7 @@
             </tbody>
           </table>
         </div>
-        <h2 class="text-lg font-semibold mb-4">Tiered Pricing Model</h2>
+        <h2 class="text-xl font-medium mb-4">Tiered Pricing Model</h2>
         <div class="overflow-x-auto -mx-6 sm:mx-0">
           <table class="w-full text-left border-collapse min-w-[640px]">
             <thead class="text-[var(--c-muted)] text-sm">
@@ -172,64 +173,64 @@
       </div>
     </section>
     <section id="tab-onboarding" role="tabpanel" aria-labelledby="tab-onboarding-btn" class="tab-content hidden">
-      <div class="rounded-2xl bg-[var(--c-surface)] p-6 shadow-[var(--shadow-soft)] ring-1 ring-[color:var(--c-surface-3)]/40">
-        <h2 class="text-lg font-semibold mb-2">Recast Onboarding Overview</h2>
-        <p class="text-[var(--c-text)]/90 mb-2">Moving from Citrix to Azure Virtual Desktop (AVD) has never been easier.</p>
-        <p class="text-[var(--c-text)]/90 mb-4">Our onboarding is built to make your transition fast, predictable, and low-stress. You’ll work directly with Recast experts who guide your IT team step-by-step — from environment preparation to AVD configuration and go-live support. Within a few weeks, your environment will be fully optimized for AVD and ready for production use.</p>
-        <h3 class="text-base font-semibold mb-3">Onboarding Services Comparison</h3>
-        <div class="overflow-x-auto -mx-2 sm:mx-0">
+      <div class="rounded-2xl bg-[var(--c-surface)] p-6 shadow-[var(--shadow-soft)] ring-1 ring-[color:var(--c-surface-3)]/40 hover:shadow-lg transition-shadow duration-300">
+        <h2 class="text-xl font-medium mb-2">Recast Onboarding Overview</h2>
+        <p class="text-base text-[var(--c-text)]/90 mb-2 leading-relaxed">Moving from Citrix to Azure Virtual Desktop (AVD) has never been easier.</p>
+        <p class="text-base text-[var(--c-text)]/90 mb-4 leading-relaxed">Our onboarding is built to make your transition fast, predictable, and low-stress. You’ll work directly with Recast experts who guide your IT team step-by-step — from environment preparation to AVD configuration and go-live support. Within a few weeks, your environment will be fully optimized for AVD and ready for production use.</p>
+        <h3 class="text-base font-medium mb-3">Onboarding Services Comparison</h3>
+        <div class="overflow-x-auto -mx-6 sm:mx-0">
           <table class="w-full text-left border-collapse min-w-[640px]">
             <thead class="text-[var(--c-muted)] text-sm">
               <tr>
-                <th class="pb-2 font-medium">Onboarding Stage</th>
+                <th class="pb-2 font-medium px-6 sm:px-0">Onboarding Stage</th>
                 <th class="pb-2 font-medium">Citrix to AVD Transition Onboarding</th>
               </tr>
             </thead>
             <tbody class="align-top">
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2">Project Duration</td><td>6–8 Weeks (max 40 consulting hours)</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Go-Live Support Period</td><td>6 Weeks post-configuration (2 hrs/week of SME access)</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Engagement Type</td><td>Advisory-led (Customer executes configurations under Recast guidance)</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Scope of Support</td><td>Migration planning, AVD setup, and operational transition from Citrix</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Availability</td><td>Standard Business Hours (8am–5pm CT/CET)</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Delivery Format</td><td>Remote consultation and documentation support</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Environment Preparation</td><td>Guidance for preparing infrastructure and identity access for AVD</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>AVD Configuration Assistance</td><td>Step-by-step guidance on configuring host pools, session management, and user access</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Policy &amp; Access Advisory</td><td>Consultation on conditional access, identity mapping, and application policies</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Modern Workplace Alignment</td><td>Optimization of AVD deployment for Windows endpoint environments</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Custom Branding (Optional)</td><td>Consultation on workspace look and feel to match corporate standards</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Consultation Deliverables</td><td>Custom configuration guide, training materials, and best-practice documentation</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Acceptance Criteria</td><td>Customer validates readiness for production AVD use following guided implementation</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Dependencies</td><td>Customer provides infrastructure access and participates in scheduled onboarding sessions</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td>Pricing</td><td>Included in onboarding engagement (non-standalone service)</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Project Duration</td><td class="py-2">6–8 Weeks (max 40 consulting hours)</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Go-Live Support Period</td><td class="py-2">6 Weeks post-configuration (2 hrs/week of SME access)</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Engagement Type</td><td class="py-2">Advisory-led (Customer executes configurations under Recast guidance)</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Scope of Support</td><td class="py-2">Migration planning, AVD setup, and operational transition from Citrix</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Availability</td><td class="py-2">Standard Business Hours (8am–5pm CT/CET)</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Delivery Format</td><td class="py-2">Remote consultation and documentation support</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Environment Preparation</td><td class="py-2">Guidance for preparing infrastructure and identity access for AVD</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">AVD Configuration Assistance</td><td class="py-2">Step-by-step guidance on configuring host pools, session management, and user access</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Policy &amp; Access Advisory</td><td class="py-2">Consultation on conditional access, identity mapping, and application policies</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Modern Workplace Alignment</td><td class="py-2">Optimization of AVD deployment for Windows endpoint environments</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Custom Branding (Optional)</td><td class="py-2">Consultation on workspace look and feel to match corporate standards</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Consultation Deliverables</td><td class="py-2">Custom configuration guide, training materials, and best-practice documentation</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Acceptance Criteria</td><td class="py-2">Customer validates readiness for production AVD use following guided implementation</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Dependencies</td><td class="py-2">Customer provides infrastructure access and participates in scheduled onboarding sessions</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 px-6 sm:px-0">Pricing</td><td class="py-2">Included in onboarding engagement (non-standalone service)</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
     <section id="tab-sla" role="tabpanel" aria-labelledby="tab-sla-btn" class="tab-content hidden">
-      <div class="rounded-2xl bg-[var(--c-surface)] p-6 shadow-[var(--shadow-soft)] ring-1 ring-[color:var(--c-surface-3)]/40">
-        <h2 class="text-lg font-semibold mb-4">Support Service Levels</h2>
-        <div class="overflow-x-auto -mx-2 sm:mx-0">
+      <div class="rounded-2xl bg-[var(--c-surface)] p-6 shadow-[var(--shadow-soft)] ring-1 ring-[color:var(--c-surface-3)]/40 hover:shadow-lg transition-shadow duration-300">
+        <h2 class="text-xl font-medium mb-4">Support Service Levels</h2>
+        <div class="overflow-x-auto -mx-6 sm:mx-0">
           <table class="w-full text-left border-collapse min-w-[560px]" aria-label="Support features and response times">
             <thead class="text-[var(--c-muted)] text-sm">
               <tr>
-                <th scope="col" class="pb-2 font-medium">Feature</th>
+                <th scope="col" class="pb-2 font-medium px-6 sm:px-0">Feature</th>
                 <th scope="col" class="pb-2 font-medium">Support</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Urgent Severity</td><td>First response: <strong>1 Business Day</strong></td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Normal Severity</td><td>First response: <strong>2 Business Days</strong></td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Low Severity</td><td>First response: <strong>3 Business Days</strong></td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Availability</td><td>8am – 5pm CT/CET</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Support Hours</td><td>Unlimited</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Dedicated CSM</td><td>✔</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Support Call Scheduling</td><td>Based on availability</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Environment Audit</td><td>—</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Configuration Audit</td><td>—</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Upgrade Assistance</td><td>—</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">User Group Membership</td><td>Based on availability</td></tr>
-              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium">Pricing</td><td>Included with Partner Licensing</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Urgent Severity</td><td class="py-2">First response: <strong>1 Business Day</strong></td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Normal Severity</td><td class="py-2">First response: <strong>2 Business Days</strong></td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Low Severity</td><td class="py-2">First response: <strong>3 Business Days</strong></td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Availability</td><td class="py-2">8am – 5pm CT/CET</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Support Hours</td><td class="py-2">Unlimited</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Dedicated CSM</td><td class="py-2">✔</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Support Call Scheduling</td><td class="py-2">Based on availability</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Environment Audit</td><td class="py-2">—</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Configuration Audit</td><td class="py-2">—</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Upgrade Assistance</td><td class="py-2">—</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">User Group Membership</td><td class="py-2">Based on availability</td></tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50"><td class="py-2 font-medium px-6 sm:px-0">Pricing</td><td class="py-2">Included with Partner Licensing</td></tr>
             </tbody>
           </table>
         </div>
@@ -250,14 +251,14 @@
         var root = document.documentElement;
         var set = (k, v) => { if (v) root.style.setProperty(k, v); };
         if (guide.colors) {
-          set('--c-bg', guide.colors.background);
-          set('--c-surface', guide.colors.surface);
-          set('--c-surface-2', guide.colors.surface2 || guide.colors.surface);
-          set('--c-surface-3', guide.colors.surface3 || '#8085C7');
-          set('--c-text', guide.colors.text || '#FFFFFF');
-          set('--c-muted', guide.colors.muted || '#DFE0F1');
-          set('--c-primary', guide.colors.primary || '#F05928');
-          set('--c-primary-contrast', guide.colors.onPrimary || '#FFFFFF');
+          set('--c-bg', guide.colors.background || '#f9fafb');
+          set('--c-surface', guide.colors.surface || '#ffffff');
+          set('--c-surface-2', guide.colors.surface2 || '#f8f9fa');
+          set('--c-surface-3', guide.colors.surface3 || '#e5e7eb');
+          set('--c-text', guide.colors.text || '#111827');
+          set('--c-muted', guide.colors.muted || '#6b7280');
+          set('--c-primary', guide.colors.primary || '#2563eb');
+          set('--c-primary-contrast', guide.colors.onPrimary || '#ffffff');
         }
         if (guide.fontFamily) set('--font-sans', guide.fontFamily);
         if (guide.radius) {
@@ -418,7 +419,7 @@
       const monthlyUSD = calculateMonthlyCost(STATE.users);
       const averageMonthlyPerUser = monthlyUSD / STATE.users;
       const lines = [
-        'Accelerator Package Pricing Summary',
+        'Accelerator Package (Nerdio +Recast Bundle) Pricing Summary',
         '',
         'Inputs',
         `- Users: ${STATE.users}`,
