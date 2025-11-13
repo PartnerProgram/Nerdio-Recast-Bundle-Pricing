@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Accelerator Package Pricing Calculator</title>
+  <title>Nerdio | Recast Bundle Package Pricing Calculator</title>
   <meta name="description" content="Instantly estimate customer and partner pricing with an accessible, brand-aware calculator." />
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="https://cdn.tailwindcss.com" defer></script>
@@ -45,7 +45,7 @@
     <div class="flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <img id="brand-logo" alt="Brand logo" src="" class="hidden h-8 w-auto" />
-        <h1 id="brand-title" class="text-2xl sm:text-3xl font-bold tracking-[-0.02em]">Accelerator Package Pricing Calculator</h1>
+        <h1 id="brand-title" class="text-2xl sm:text-3xl font-bold tracking-[-0.02em]">Nerdio | Recast Bundle Package Pricing Calculator</h1>
       </div>
       <button id="copy-email" class="inline-flex items-center gap-2 rounded-[var(--radius-full)] px-4 py-2 bg-[var(--c-primary)] text-[var(--c-primary-contrast)] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--c-primary)] focus:ring-offset-[var(--c-bg)] transition text-sm font-medium">
         <i data-lucide="mail" aria-hidden="true" class="size-4"></i>
@@ -116,11 +116,55 @@
             </thead>
             <tbody>
               <tr class="border-t border-[color:var(--c-surface-3)]/50">
-                <td class="py-2 px-6 sm:px-0">Accelerator Package</td>
+                <td class="py-2 px-6 sm:px-0">Nerdio | Recast Bundle </td>
                 <td id="custUsers">0</td>
                 <td id="custPerUser">$0.00</td>
                 <td id="custBase">$0.00</td>
                 <td id="custTotal">$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 class="text-lg font-semibold mb-4">Tiered Pricing Model</h2>
+        <div class="overflow-x-auto -mx-6 sm:mx-0">
+          <table class="w-full text-left border-collapse min-w-[640px]">
+            <thead class="text-[var(--c-muted)] text-sm">
+              <tr>
+                <th class="pb-2 font-medium px-6 sm:px-0">Users</th>
+                <th class="pb-2 font-medium">Monthly Revenue</th>
+                <th class="pb-2 font-medium">Annual Revenue</th>
+                <th class="pb-2 font-medium">Unit Price</th>
+                <th class="pb-2 font-medium">Discount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50">
+                <td class="py-2 px-6 sm:px-0">250</td>
+                <td class="py-2">$3,200</td>
+                <td class="py-2">$38,400</td>
+                <td class="py-2">$12.80</td>
+                <td class="py-2">0%</td>
+              </tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50">
+                <td class="py-2 px-6 sm:px-0">1000</td>
+                <td class="py-2">$11,520</td>
+                <td class="py-2">$138,240</td>
+                <td class="py-2">$11.52</td>
+                <td class="py-2">10%</td>
+              </tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50">
+                <td class="py-2 px-6 sm:px-0">2500</td>
+                <td class="py-2">$27,000</td>
+                <td class="py-2">$326,400</td>
+                <td class="py-2">$10.88</td>
+                <td class="py-2">15%</td>
+              </tr>
+              <tr class="border-t border-[color:var(--c-surface-3)]/50">
+                <td class="py-2 px-6 sm:px-0">5000</td>
+                <td class="py-2">$51,200</td>
+                <td class="py-2">$614,400</td>
+                <td class="py-2">$10.24</td>
+                <td class="py-2">20%</td>
               </tr>
             </tbody>
           </table>
